@@ -13,8 +13,16 @@ class AseguradoraController{
     }
 
 
-    public function aseguradoras(){
+    public function getListAseguradoras(){
         $aseguradoras = $this->model->getAseguradoras();
         return $this -> view -> showAseguradoras($aseguradoras);
     }
+
+    public function getAseguradoraId($id){
+        $siniestrosAseguradora = $this->model->getsiniestrosAseguradoraId($id);
+        return $this -> view -> showSiniestrosByAseguradora($siniestrosAseguradora);
+
+
+    }
+    
 }

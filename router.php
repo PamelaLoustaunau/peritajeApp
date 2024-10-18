@@ -21,20 +21,20 @@ switch($params[0]){
         break;
     case "siniestros":
         $controller = new SiniestroController();
-        $controller -> siniestros();
+        $controller -> getListSiniestros();
         break;
-    case "siniestro":
+    /*case "siniestro":
         $controller = new SiniestroController();
-        $controller -> siniestro();
+        $controller -> getSiniestroID();
 
-        break;
+        break;*/
     case "aseguradoras":
         $controller = new AseguradoraController();
-        $controller -> aseguradoras();
+        $controller -> getListAseguradoras();
         break;
     case "aseguradora":
         $controller = new AseguradoraController();
-        $controller -> aseguradora();
+        $controller -> getAseguradoraId($params[1]);
         break;
     default:
         echo "No se encuentra lo ingresado";
