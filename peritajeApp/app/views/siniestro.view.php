@@ -1,11 +1,8 @@
-
 <link rel="stylesheet" href="./style/style.css">
 
 <?php
 class SiniestroView {
 
-
-    
     public function showSiniestros($siniestros) {
         echo "<h1>Siniestros</h1>
         <div class='accordion'>";
@@ -33,5 +30,4 @@ class SiniestroView {
     
 }
 ?>
-
 <script src="./js/home.js"></script>

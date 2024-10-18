@@ -14,10 +14,15 @@ class SiniestroController{
 
 
 
-    public function siniestros(){
+    public function getListSiniestros(){
         $siniestros = $this->model->getSiniestros();
         return $this -> view -> showSiniestros($siniestros);
     }
+
+    /*public function getSiniestroID(){
+        $siniestroID= $this->model->getBySiniestro()
+        return $this->view->s
+    }*/
 
 
 
