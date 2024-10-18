@@ -11,10 +11,24 @@
     width: 50%;
 
 }
+ul{
+    list-style:none;
+}
+.siniestrosAseguradora{
+    background-color: #00c2c2fd;
+    padding: 1rem;
+    width: 100%;
+    font-size: 1.2rem;
+    color:black;
+    margin-bottom: 1rem;
 
+
+
+ 
+}
 .accordion-btn{
-    background-color: #87e2f1fd;
-    color: #444;
+    background-color: #d387f1fd;
+    color:black;
     cursor: pointer;
     padding: 1rem;
     width: 100%;
@@ -25,6 +39,7 @@
     transition: 0.4s;
     margin-bottom: 1rem;
 }
+
 
 .accordion-btn.active {
     background-color: #ccc;
@@ -42,7 +57,7 @@
     display: flex;
     justify-content: center;
 }
-#back {
+#back, #back-aseguradora {
     background-color: rgb(86, 98, 119);
     padding: 0;
     width: 20%;

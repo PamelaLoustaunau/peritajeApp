@@ -2,35 +2,58 @@ document.addEventListener("DOMContentLoaded", function() {
     const siniestros = document.getElementById('siniestros'); 
     const aseguradoras = document.getElementById('aseguradoras');
     const btnBack = document.getElementById('back');
-    const accordion = document.querySelector('.accordion');
+    const btnBackAseguradora = document.getElementById('back-aseguradora');
 
-    // Comprobar si el botón 'siniestros' existe
+    const accordionBtns = document.querySelectorAll('.accordion-btn');
+
     if (siniestros) {
         siniestros.addEventListener('click', function() {
-            window.location.href = './ruteo.php?action=siniestros';
+            window.location.href ='./ruteo.php?action=siniestros';
         });
     }
 
-    // Comprobar si el botón 'aseguradoras' existe
     if (aseguradoras) {
         aseguradoras.addEventListener('click', function() {
-            window.location.href = './ruteo.php?action=aseguradoras';
+            window.location.href ='./ruteo.php?action=aseguradoras';
+        });
+    }
+    if (accordionBtns){
+        accordionBtns.forEach(btn => {
+            btn.addEventListener('click', function() {
+                const content = this.nextElementSibling;
+
+                console.log(content); // Verifica el contenido seleccionado
+
+                // Ocultar todos los demás contenidos
+                const allContents = document.querySelectorAll('.accordion-content');
+                allContents.forEach(c => {
+                    if (c !== content) {
+                        c.style.display = "none"; // Ocultar otros contenidos
+                    }
+                });
+
+                // Alternar el display del contenido correspondiente
+                if (content.style.display === "block") {
+                    content.style.display = "none";
+                } else {
+                    content.style.display = "block";
+                }
+            });
         });
     }
     
-    if (accordion) {
-        accordion.addEventListener('click', function(){
-         window.location.href = './ruteo.php?action=siniestro';
-
-        });
-    }
-        // Comprobar si el botón 'back' existe
 
     if (btnBack) {
         btnBack.addEventListener('click', function() {
-            window.location.href = './ruteo.php?action=home';
+            window.location.href ='./ruteo.php?action=home';
         });
     }
     
-
+    if (btnBackAseguradora) {
+        btnBackAseguradora.addEventListener('click', function() {
+            console.log('Botón Atrás presionado');
+            window.location.href ='./ruteo.php?action=aseguradoras';
+        });
+    }
+    
 });
