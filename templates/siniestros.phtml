@@ -1,0 +1,22 @@
+<?php require_once './templates/layout/header.phtml' ?>
+
+<h1>Siniestros</h1>
+        <div class='accordion'>
+        <?php foreach ($siniestros as $key => $siniestro):?>
+                <button class='accordion-btn' id='accordion-btn-$key'>
+                <?php echo 'Nombre y Apellido: '. $siniestro->Asegurado?><?php echo ' - Fecha: '. $siniestro->Fecha?>
+                </button>
+                <div class='accordion-content' id='accordion-content-$key'>
+                    <p><?php echo 'ID del Siniestro: '.$siniestro->ID_Siniestro?></p>
+                    <p><?php echo 'Descripción: '.$siniestro->Tipo_Siniestro?></p>
+                    <p><?php echo 'ID de la Aseguradora: '.$siniestro->ID_Aseguradora?></p>
+
+                </div>
+                <?php endforeach ?>
+        </div>
+              <div class='btn-back'>
+                  <button id='back'>Atrás</button>
+              </div>
+
+<?php require_once './templates/layout/footer.phtml' ?>
+
