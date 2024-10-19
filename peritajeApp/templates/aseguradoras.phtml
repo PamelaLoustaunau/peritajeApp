@@ -1,0 +1,19 @@
+<?php require 'templates/layout/header.phtml' ?>
+
+<h1>Aseguradoras</h1>
+<div class='accordion'>
+
+<?php foreach ($aseguradoras as $key => $aseguradora): ?> 
+        <button class='accordion-btn aseguradoraBtn' id='accordion-btn-$key'>
+            Aseguradora: <?$aseguradora->Nombre?>
+        </button>
+        <div class='accordion-content' id='accordion-content-$key'>
+            <a href='aseguradora/<?$aseguradora->ID_Aseguradora?> '>ID aseguradora: <?$aseguradora->ID_Aseguradora?></a>
+        </div>"   
+        <?php endforeach ?>  
+</div>
+<div class = btn-back>
+<button id='back'>Atrás</button>
+</div>"
+
+<?php require 'templates/layout/footer.phtml' ?>
