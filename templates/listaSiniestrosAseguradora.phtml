@@ -1,0 +1,19 @@
+<?php require 'templates/layout/header.phtml' ?>
+
+<h1>Siniestros (acá nombre de aseguradora)</h1>
+<ul>
+<?foreach ($siniestrosAseguradora as $key => $siniestro):?> 
+        <li class='siniestrosAseguradora' id='siniestrosAseguradora-$key'>
+            Nombre y Apellido: <?$siniestro->Asegurado?> - Fecha: <?$siniestro->Fecha?>
+            ID del Siniestro: <?$siniestro->ID_Siniestro?>
+            <?$siniestro->Tipo_Siniestro?>
+            ID de la Aseguradora: <?$siniestro->ID_Aseguradora?>
+        </li>
+
+</ul>
+</main>
+<div class ='btn-back'>
+<button id='back-aseguradora'>Atrás</button>
+</div>
+
+<?php require 'templates/layout/footer.phtml' ?>
