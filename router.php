@@ -1,10 +1,15 @@
 <?php
+require_once "./libs/response.php";
+require_once "./app/middlewares/session.auth.middleware.php";
 require_once "./app/controllers/siniestro.controller.php";
 require_once "./app/controllers/aseguradora.controller.php";
 require_once "./app/controllers/general.controller.php";
+require_once "./app/controllers/auth.controller.php";
 
 // base_url para redirecciones y base tag
 define('BASE_URL', '//'.$_SERVER['SERVER_NAME'] . ':' . $_SERVER['SERVER_PORT'] . dirname($_SERVER['PHP_SELF']).'/');
+
+$res= new Response();
 //no empty es para preguntar y ver que NO LLEGUE VACIA; si tiene algun dato ingresa y lo guarda en action, sino action es igual a vacio.
 if(!empty($_GET["action"])){
     $action = $_GET["action"];
@@ -35,6 +40,18 @@ switch($params[0]){
     case "aseguradora":
         $controller = new AseguradoraController();
         $controller -> getAseguradoraId($params[1]);
+        break;
+    case "showlogin":
+        $controller = new AuthController();
+        $controller -> showLogin();
+        break;
+    case "login":
+        $controller = new AuthController();
+        $controller -> login();
+        break;
+    case "logout":
+        $controller = new AuthController();
+        $controller -> logout();
         break;
     default:
         echo "No se encuentra lo ingresado";

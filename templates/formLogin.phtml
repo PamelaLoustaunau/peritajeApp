@@ -1,0 +1,19 @@
+<?php require_once './templates/layout/header.phtml'?>
+<?php if ($error): ?>
+    <div class='' role='alert'>
+        <?php=$error?>
+    </div>
+<?php endif ?>
+
+
+    <form method='post' action='login'>
+        <div class=''>
+            <label for='email' class='' id='email' name='email' required>
+        </div>
+        <div class=''>
+            <label for='password' class='' id='password' name='password' required>
+        </div>
+        <button type='submit' class=''>login</button>
+    </form>
+
+<?php require_once './templates/layout/footer.phtml'?>
