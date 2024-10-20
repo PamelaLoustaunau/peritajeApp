@@ -6,12 +6,11 @@ class SiniestroController{
     private $model;
     private $view;
 
-    public function __construct(){
+    public function __construct($res){
         $this->model = new SiniestroModel();
-        $this->view = new SiniestroView();
+        $this->view = new SiniestroView($res->$user);
 
     }
-
 
 
     public function getListSiniestros(){

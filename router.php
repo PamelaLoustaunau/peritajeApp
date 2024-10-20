@@ -25,7 +25,7 @@ switch($params[0]){
         //si no estás logueado te redirige al showlogin
         //cuando pasamos el $res a un controlador, todas las veces que lo llamemos tenemos que pasarle el $res
         //verifyAuthMiddleware($res) sólo va en los case privados ABM
-        $controller = new GeneralController($res$res);
+        $controller = new GeneralController($res);
         $controller -> getHome();
         break;
     case "siniestros":
@@ -44,45 +44,63 @@ switch($params[0]){
         $controller -> getAseguradoraId($params[1]);
         break;
     case "agregarAseguradora":
-        //sessionAuthMiddleware();
-        $controller = new AseguradoraController();
+        sessionAuthMiddleware($res);
+        verifyAuthMiddleware ($res);
+        $controller = new AseguradoraController($res);
         $controller -> getAgregarAseguradora();
         break;
     case "aseguradoraAdd":
-        $controller = new AseguradoraController();
+        sessionAuthMiddleware($res);
+        verifyAuthMiddleware ($res);
+        $controller = new AseguradoraController($res);
         $controller -> getAseguradoraAdd();
         break;
     case "aseguradoraDelete":
-        $controller = new AseguradoraController();
+        sessionAuthMiddleware($res);
+        verifyAuthMiddleware ($res);
+        $controller = new AseguradoraController($res);
         $controller -> getAseguradoradelete($params[1]);
         break;
     case "modificarAseguradora":
-        $controller = new AseguradoraController();
+        sessionAuthMiddleware($res);
+        verifyAuthMiddleware ($res);
+        $controller = new AseguradoraController($res);
         $controller -> getAseguradoraModify($params[1]);
         break;
     case "modifyaseguradora":
-        $controller = new AseguradoraController();
+        sessionAuthMiddleware($res);
+        verifyAuthMiddleware ($res);
+        $controller = new AseguradoraController($res);
         $controller -> getModifyAseguradora($params[1]);
         break;
     case "agregarSiniestro":
-        //sessionAuthMiddleware();
-        $controller = new SiniestroController();
+        sessionAuthMiddleware($res);
+        verifyAuthMiddleware ($res);
+        $controller = new SiniestroController($res);
         $controller -> getAgregarSiniestro();
         break;
     case "siniestroAdd":
-        $controller = new SiniestroController();
+        sessionAuthMiddleware($res);
+        verifyAuthMiddleware ($res);
+        $controller = new SiniestroController($res);
         $controller -> getSiniestroAdd();
         break;
     case "siniestroDelete":
-        $controller = new SiniestroController();
+        sessionAuthMiddleware($res);
+        verifyAuthMiddleware ($res);
+        $controller = new SiniestroController($res);
         $controller -> getsiniestrodelete($params[1]);
         break;
     case "modificarSiniestro":
-        $controller = new SiniestroController();
+        sessionAuthMiddleware($res);
+        verifyAuthMiddleware ($res);
+        $controller = new SiniestroController($res);
         $controller -> getSiniestroModify($params[1]);
         break;
     case "modifySiniestro":
-        $controller = new SiniestroController();
+        sessionAuthMiddleware($res);
+        verifyAuthMiddleware ($res);
+        $controller = new SiniestroController($res);
         $controller -> getModifySiniestro($params[1]);
         break;
     

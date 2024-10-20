@@ -6,9 +6,9 @@ class AseguradoraController{
     private $model;
     private $view;
 
-    public function __construct(/*$res*/){
+    public function __construct($res){
         $this->model = new AseguradoraModel();
-        $this->view = new AseguradoraView(/*$res->user*/);
+        $this->view = new AseguradoraView($res->user);
     }
 
 

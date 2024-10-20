@@ -4,9 +4,10 @@ class AseguradoraView {
     private $user=null;
     
    
-   /* public function __construct($user) {
+    public function __construct($user) {
         $this->user = $user;
-    }*/
+    }
+    
     public function showAseguradoras($aseguradoras){
         
         require_once "./templates/aseguradoras.phtml";
