@@ -49,6 +49,10 @@ switch($params[0]){
         $controller = new AuthController();
         $controller -> login();
         break;
+    case "logout":
+        $controller = new AuthController();
+        $controller -> logout();
+        break;
     default:
         echo "No se encuentra lo ingresado";
 }
