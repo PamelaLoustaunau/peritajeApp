@@ -13,6 +13,32 @@ class SiniestroModel{
         $siniestros = $query -> fetchAll(PDO::FETCH_OBJ);
         return $siniestros;
     }
+    public function siniestroaAdd($date, $typeSiniestro, $asegurado, $aseguradora){
+        $query = $this -> db->prepare('INSERT INTO siniestro (Fecha,Tipo_Siniestro, Asegurado, ID_Aseguradora) VALUES(?,?,?,?)');
+        $query -> execute([$date, $typeSiniestro, $asegurado, $aseguradora]);
+        $id = $this->db->lastInsertId();    
+        return $id;
+    }
+    public function deleteSiniestro($id){
+        $query = $this -> db->prepare('DELETE FROM siniestro WHERE ID_Siniestro=?');
+        $query->execute([$id]);
+    }
+
+    public function modifySiniestro($id){
+        $query = $this->db->prepare('SELECT * FROM siniestro WHERE ID_Siniestro=?');
+        $query->execute([$id]);   
+        $siniestro = $query->fetch(PDO::FETCH_OBJ);    
+        return $siniestro;
+
+    }
+
+    public function siniestroModify($date, $typeSiniestro, $asegurado,  $id){
+        $query = $this->db->prepare('UPDATE siniestro SET Fecha=?, Tipo_Siniestro=?, Asegurado= ? WHERE ID_Siniestro= ?' );
+
+        $query->execute([$date, $typeSiniestro, $asegurado, $id]);
+
+
+    }
 
 
 

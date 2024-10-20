@@ -3,6 +3,7 @@
 <h1>Siniestros</h1>
         <div class='accordion'>
         <?php foreach ($siniestros as $key => $siniestro):?>
+            <div class='contentAseguradora'>
                 <button class='accordion-btn' id='accordion-btn-$key'>
                 <?php echo 'Nombre y Apellido: '. $siniestro->Asegurado?><?php echo ' - Fecha: '. $siniestro->Fecha?>
                 </button>
@@ -10,13 +11,16 @@
                     <p><?php echo 'ID del Siniestro: '.$siniestro->ID_Siniestro?></p>
                     <p><?php echo 'Descripción: '.$siniestro->Tipo_Siniestro?></p>
                     <p><?php echo 'ID de la Aseguradora: '.$siniestro->ID_Aseguradora?></p>
-
                 </div>
-                <?php endforeach ?>
+                <button class='abm-btn modificar'><a href='modificarSiniestro/<?php echo $siniestro->ID_Siniestro ?>'>Modificar</a></button>
+                <button class='abm-btn'><a href='siniestroDelete/<?php echo $siniestro->ID_Siniestro ?>'>Eliminar</a></button>
+            </div>  
+        <?php endforeach ?>
         </div>
-              <div class='btn-back'>
-                  <button id='back'>Atrás</button>
-              </div>
+            <div class='btn-back'>
+                <button id='back'>Atrás</button>
+                <button class='agregarBtn'id='addSiniestroBtn'>Agregar Siniestro</button>
+            </div>
 
 <?php require_once './templates/layout/footer.phtml' ?>
 

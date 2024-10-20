@@ -19,10 +19,44 @@ class SiniestroController{
         return $this -> view -> showSiniestros($siniestros);
     }
 
-    /*public function getSiniestroID(){
-        $siniestroID= $this->model->getBySiniestro()
-        return $this->view->s
-    }*/
+    public function getAgregarSiniestro(){
+        
+        return $this -> view -> formAddSiniestro();
+    }
+
+    public function getSiniestroAdd(){
+        $aseguradora = $_POST['aseguradora'];
+        $date = $_POST['date'];
+        $typeSiniestro = $_POST['typeSiniestro'];
+        $asegurado = $_POST['name'];
+        
+        $id = $this->model->siniestroaAdd($date, $typeSiniestro, $asegurado, $aseguradora); 
+        header('Location: ' . BASE_URL.'siniestros');
+    }
+
+    public function getsiniestrodelete($id){
+        $this->model->deleteSiniestro($id);
+        header('Location: ' . BASE_URL.'siniestros');
+
+    }
+
+    public function getSiniestroModify($id){
+        $siniestro = $this->model-> modifySiniestro($id);
+        return $this -> view -> formModifyiniestro($siniestro);
+    }
+
+    public function getModifySiniestro($id){
+        $date = $_POST['date'];
+        $typeSiniestro = $_POST['typeSiniestro'];
+        $asegurado = $_POST['asegurado'];
+        $this->model->siniestroModify($date, $typeSiniestro, $asegurado,  $id);
+        header('Location: ' . BASE_URL.'siniestros');
+
+    }
+
+
+
+
 
 
 

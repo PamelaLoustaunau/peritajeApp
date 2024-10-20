@@ -1,6 +1,6 @@
 <?php
-require_once './models/user.model.php';
-require_once './views/auth.view.php';
+require_once './app/models/user.model.php';
+require_once './app/views/auth.view.php';
 
 class AuthController {
     private $model;
@@ -15,14 +15,14 @@ class AuthController {
         return $this-> view-> showLogin();
     }
 
-    public function login (){     //la acción de login
+    public function login(){     //la acción de login
 
         if (!isset($_POST['email']) || empty($_POST['email'])){
             return $this-> view-> showLogin ('Falta completar el nombre de usuario');
         } 
 
         if (!isset($_POST['password']) || empty($_POST['password'])){
-            return $this-> view-> showLogin ('Falta completar la contraseña');
+            return $this-> view-> showLogin('Falta completar la contraseña');
         }  
 
         $email  = $_POST['email'];
@@ -38,8 +38,7 @@ class AuthController {
             $_SESSION['EMAIL_USER'] = $userFromDB->email;
 
             //redirección al home
-            header('Location: '.BASE_URL);
-        }else{
+            header('Location: '.BASE_URL.'aseguradoras');
             return $this->view->showLogin('Credenciales incorrectas');
         }
         }
@@ -53,8 +52,3 @@ class AuthController {
 
     }
 
-
-
-
-
-}

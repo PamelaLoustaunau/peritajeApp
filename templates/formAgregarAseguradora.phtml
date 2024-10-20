@@ -1,0 +1,16 @@
+<?php require_once './templates/layout/header.phtml' ?>
+
+ <form action='aseguradoraAdd' method='POST'>
+    <h1>Agregar Aseguradora</h1>
+    <div>
+        <label for='name' class='labelAdd'>Nombre Aseguradora</label>
+        <input type='text' name='name' class='inputAdd' required>
+        <label for='adress' class='labelAdd'>Dirección</label>
+        <input type='text' name='adress' class='inputAdd' required>
+        <label for='email' class='labelAdd'>Email</label>
+        <input type='email' name='email'  class='inputAdd' required>
+    </div>
+    <button type='submit'>Guadar</button>
+</form>
+
+<?php require_once './templates/layout/footer.phtml' ?>
