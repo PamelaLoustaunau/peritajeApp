@@ -4,7 +4,9 @@ document.addEventListener("DOMContentLoaded", function() {
     const btnBack = document.getElementById('back');
     const btnBackAseguradora = document.getElementById('back-aseguradora');
     const accordionBtns = document.querySelectorAll('.accordion-btn');
-    const agregarAseguradora = document.getElementById('agregarBtn');
+    const agregarAseguradora = document.getElementById('addAseguradoraBtn');
+    const agregarsiniestro = document.getElementById('addSiniestroBtn');
+
 
     if (siniestros) {
         siniestros.addEventListener('click', function() {
@@ -54,9 +56,15 @@ document.addEventListener("DOMContentLoaded", function() {
     }
     if (agregarAseguradora) {
         agregarAseguradora.addEventListener('click', function() {
-            window.location.href ='./agregar';
+            window.location.href ='./agregarAseguradora';
         });
     }
+    if (agregarsiniestro) {
+        agregarsiniestro.addEventListener('click', function() {
+            window.location.href ='./agregarSiniestro';
+        });
+    }
+
 
     
 });

@@ -4,23 +4,24 @@
 <div class='accordion'>
 
 <?php foreach ($aseguradoras as $key => $aseguradora): 
-    ?> 
-        <button class='accordion-btn aseguradoraBtn' id='accordion-btn-$key'>
-        <?php echo'Aseguradora: '. $aseguradora->Nombre ?>
-        </button>
-        <div class='accordion-content' id='accordion-content-$key'>
-        <a href='aseguradora/<?php echo $aseguradora->ID_Aseguradora ?>'><?php echo 'Ver Siniestros'; ?></a>
-        </div>
-        <div>
-            <button class='abm-btn' id='modificarBtn'>Modificar</button>
-            <button class='abm-btn' id='EliminarBtn'>Eliminar</button>
-        </div>
+    ?> <div class='contentAseguradora'>
+            <button class='accordion-btn aseguradoraBtn' id='accordion-btn-$key'>
+            <?php echo'Aseguradora: '. $aseguradora->Nombre ?>
+            </button>
+            <div class='accordion-content' id='accordion-content-$key'>
+            <a href='aseguradora/<?php echo $aseguradora->ID_Aseguradora ?>'><?php echo 'Ver Siniestros'; ?></a>
+            </div>
+            <button class='abm-btn modificar'><a href='modificarAseguradora/<?php echo $aseguradora->ID_Aseguradora ?>'>Modificar</a></button>
+            <button class='abm-btn'><a href='aseguradoraDelete/<?php echo $aseguradora->ID_Aseguradora ?>'>Eliminar</a></button>
+        </div>    
 
+        
+        
         <?php endforeach ?>  
 </div>
 <div class = btn-back>
 <button id='back'>Atrás</button>
-<button class='abm-btn'id='agregarBtn'>Agregar Aseguradora</button>
+<button class='agregarBtn'id='addAseguradoraBtn'>Agregar Aseguradora</button>
 
 </div>
 

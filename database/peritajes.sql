@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 20-10-2024 a las 01:59:08
+-- Tiempo de generación: 20-10-2024 a las 08:33:40
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.2.12
 
@@ -102,8 +102,17 @@ INSERT INTO `siniestro` (`ID_Siniestro`, `Fecha`, `Tipo_Siniestro`, `Asegurado`,
 CREATE TABLE `usuario` (
   `id` int(40) NOT NULL,
   `email` varchar(250) NOT NULL,
-  `contraseña` char(60) NOT NULL
+  `password` char(60) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `usuario`
+--
+
+INSERT INTO `usuario` (`id`, `email`, `password`) VALUES
+(1, 'webadmin', '$2y$10$rMiPv8I.rHrw1BXy/hHEFOxet.WJle.kiN2QDP6NHIVeA9d6n7HBW'),
+(2, 'pame', '$2y$10$Cb8uAe3yyZ/FlLU5WwxTDug1QweYs/20qCb1y5slVCczfLtPf0KkK'),
+(3, 'sole', '$2y$10$R1G9S5.pJ0DUrvE6G2nbceYLAOhaVBDv82NDl2fgelLvQGp4Dxhr2');
 
 --
 -- Índices para tablas volcadas
@@ -148,7 +157,7 @@ ALTER TABLE `siniestro`
 -- AUTO_INCREMENT de la tabla `usuario`
 --
 ALTER TABLE `usuario`
-  MODIFY `id` int(40) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(40) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- Restricciones para tablas volcadas

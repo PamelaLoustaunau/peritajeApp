@@ -21,7 +21,7 @@ $params = explode("/", $action); // params se convierte en un arreglo separado p
 // con el indice recorro los parametros dentro de params
 switch($params[0]){
     case "home":
-        $controller = new GeneralController();
+        $controller = new GeneralController($res);
         $controller -> getHome();
         break;
     case "siniestros":
@@ -36,10 +36,52 @@ switch($params[0]){
         $controller = new AseguradoraController();
         $controller -> getAseguradoraId($params[1]);
         break;
-    case "agregar":
-        $controller = new AseguradoraController($res);
+    case "agregarAseguradora":
+        //sessionAuthMiddleware();
+        $controller = new AseguradoraController();
         $controller -> getAgregarAseguradora();
         break;
+    case "aseguradoraAdd":
+        $controller = new AseguradoraController();
+        $controller -> getAseguradoraAdd();
+        break;
+    case "aseguradoraDelete":
+        $controller = new AseguradoraController();
+        $controller -> getAseguradoradelete($params[1]);
+        break;
+    case "modificarAseguradora":
+        $controller = new AseguradoraController();
+        $controller -> getAseguradoraModify($params[1]);
+        break;
+    case "modifyaseguradora":
+        $controller = new AseguradoraController();
+        $controller -> getModifyAseguradora($params[1]);
+        break;
+    case "agregarSiniestro":
+        //sessionAuthMiddleware();
+        $controller = new SiniestroController();
+        $controller -> getAgregarSiniestro();
+        break;
+    case "siniestroAdd":
+        $controller = new SiniestroController();
+        $controller -> getSiniestroAdd();
+        break;
+    case "siniestroDelete":
+        $controller = new SiniestroController();
+        $controller -> getsiniestrodelete($params[1]);
+        break;
+    case "modificarSiniestro":
+        $controller = new SiniestroController();
+        $controller -> getSiniestroModify($params[1]);
+        break;
+    case "modifySiniestro":
+        $controller = new SiniestroController();
+        $controller -> getModifySiniestro($params[1]);
+        break;
+    
+       
+    
+
     case "showlogin":
         $controller = new AuthController();
         $controller -> showLogin();

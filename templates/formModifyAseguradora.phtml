@@ -1,0 +1,16 @@
+<?php require_once './templates/layout/header.phtml' ?>
+
+ <form action='modifyaseguradora/<?php echo $aseguradora->ID_Aseguradora?>' method='POST'>
+    <h1>Modificar Aseguradora</h1>
+    <div>
+        <label for='name' class='labelAdd'>Nombre Aseguradora</label>
+        <input type='text' name='name' class='inputAdd' value ='<?php echo $aseguradora->Nombre ?>' required>
+        <label for='adress' class='labelAdd'>Dirección</label>
+        <input type='text' name='adress' value ='<?php echo $aseguradora->Direccion ?>' class='inputAdd' required>
+        <label for='email' class='labelAdd'>Email</label>
+        <input type='email' name='email' value ='<?php echo $aseguradora->Mail ?>' class='inputAdd' required>
+    </div>
+    <button type='submit'>Modificar</button>
+</form>
+
+<?php require_once './templates/layout/footer.phtml' ?>
