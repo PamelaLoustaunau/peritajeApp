@@ -13,18 +13,15 @@
 }
 ul{
     list-style:none;
+    padding: 0px;
 }
 .siniestrosAseguradora{
-    background-color: #00c2c2fd;
+    background-color: #006868cb;
     padding: 1rem;
-    width: 100%;
+    width: 97%;
     font-size: 1.2rem;
     color:black;
     margin-bottom: 1rem;
-
-
-
- 
 }
 .accordion-btn{
     background-color: #d387f1fd;
