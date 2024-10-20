@@ -81,24 +81,75 @@ class Model {
             (24, '2024-09-01', 'terceros', 'Daniela Ceres', 7),
             (25, '2024-02-18', 'terceros', 'Cecilia Vera', 5);
 
-            -- Crear tabla `usuario`
             CREATE TABLE `usuario` (
-              `id` int(40) NOT NULL AUTO_INCREMENT,
+              `id` int(40) NOT NULL,
               `email` varchar(250) NOT NULL,
-              `contraseña` char(60) NOT NULL,
-              PRIMARY KEY (`id`)
+              `password` char(60) NOT NULL
             ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
-            -- Índices y restricciones
+            
+            --
+            -- Volcado de datos para la tabla `usuario`
+            --
+            
+            INSERT INTO `usuario` (`id`, `email`, `password`) VALUES
+            (1, 'webadmin', '$2y$10$rMiPv8I.rHrw1BXy/hHEFOxet.WJle.kiN2QDP6NHIVeA9d6n7HBW'),
+            (2, 'pame', '$2y$10$Cb8uAe3yyZ/FlLU5WwxTDug1QweYs/20qCb1y5slVCczfLtPf0KkK'),
+            (3, 'sole', '$2y$10$R1G9S5.pJ0DUrvE6G2nbceYLAOhaVBDv82NDl2fgelLvQGp4Dxhr2');
+            
+            --
+            -- Índices para tablas volcadas
+            --
+            
+            --
+            -- Indices de la tabla `aseguradora`
+            --
+            ALTER TABLE `aseguradora`
+              ADD PRIMARY KEY (`ID_Aseguradora`);
+            
+            --
+            -- Indices de la tabla `siniestro`
+            --
+            ALTER TABLE `siniestro`
+              ADD PRIMARY KEY (`ID_Siniestro`),
+              ADD KEY `ID_Aseguradora` (`ID_Aseguradora`);
+            
+            --
+            -- Indices de la tabla `usuario`
+            --
+            ALTER TABLE `usuario`
+              ADD PRIMARY KEY (`id`);
+            
+            --
+            -- AUTO_INCREMENT de las tablas volcadas
+            --
+            
+            --
+            -- AUTO_INCREMENT de la tabla `aseguradora`
+            --
             ALTER TABLE `aseguradora`
               MODIFY `ID_Aseguradora` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
-
+            
+            --
+            -- AUTO_INCREMENT de la tabla `siniestro`
+            --
             ALTER TABLE `siniestro`
               MODIFY `ID_Siniestro` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
-
+            
+            --
+            -- AUTO_INCREMENT de la tabla `usuario`
+            --
             ALTER TABLE `usuario`
-              MODIFY `id` int(40) NOT NULL AUTO_INCREMENT;
-
+              MODIFY `id` int(40) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+            
+            --
+            -- Restricciones para tablas volcadas
+            --
+            
+            --
+            -- Filtros para la tabla `siniestro`
+            --
+            ALTER TABLE `siniestro`
+              ADD CONSTRAINT `Siniestro_ibfk_1` FOREIGN KEY (`ID_Aseguradora`) REFERENCES `aseguradora` (`ID_Aseguradora`);
             COMMIT;
 END;
             $this->db->exec($sql); // Ejecuta el SQL para crear las tablas
