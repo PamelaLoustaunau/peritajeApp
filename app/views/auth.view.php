@@ -6,3 +6,4 @@ class AuthView{
         require_once './templates/formLogin.phtml';
     }
 }
+

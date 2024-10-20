@@ -105,10 +105,10 @@ END;
         }
     }
 
-    private function createDb() {
+    /*private function createDb() {
         $pdo = new PDO('mysql:host=' . MYSQL_HOST, MYSQL_USER, MYSQL_PASS);
         $pdo->exec("CREATE DATABASE IF NOT EXISTS " . MYSQL_DB);
         return $pdo;
-    }
+    }*/
 }
 ?>

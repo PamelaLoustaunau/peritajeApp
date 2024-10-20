@@ -21,11 +21,15 @@ $params = explode("/", $action); // params se convierte en un arreglo separado p
 // con el indice recorro los parametros dentro de params
 switch($params[0]){
     case "home":
-        $controller = new GeneralController();
+        sessionAuthMiddleware($res);//va en todos, no redirige en cambio verifyAuthMiddleware($res)si no estás logueado te redirige al showlogin
+        //cuando pasamos el $res a un controlador, todas las veces que lo llamemos tenemos que pasarle el $res
+        //verifyAuthMiddleware($res) sólo va en los case privados ABM
+        $controller = new GeneralController($res);
         $controller -> getHome();
         break;
     case "siniestros":
-        $controller = new SiniestroController();
+        sessionAuthMiddleware($res);
+        $controller = new SiniestroController()$res;
         $controller -> getListSiniestros();
         break;
     /*case "siniestro":
@@ -34,11 +38,13 @@ switch($params[0]){
 
         break;*/
     case "aseguradoras":
-        $controller = new AseguradoraController();
+        sessionAuthMiddleware($res);
+        $controller = new AseguradoraController($res);
         $controller -> getListAseguradoras();
         break;
     case "aseguradora":
-        $controller = new AseguradoraController();
+        sessionAuthMiddleware($res);
+        $controller = new AseguradoraController($res);
         $controller -> getAseguradoraId($params[1]);
         break;
     case "showlogin":
