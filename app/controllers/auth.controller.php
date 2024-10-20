@@ -1,6 +1,6 @@
 <?php
-require_once './models/user.model.php';
-require_once './views/auth.view.php';
+require_once './app/models/user.model.php';
+require_once './app/views/auth.view.php';
 
 class AuthController {
     
@@ -51,8 +51,3 @@ class AuthController {
 
     }
 
-
-
-
-
-}

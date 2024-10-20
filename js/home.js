@@ -3,18 +3,18 @@ document.addEventListener("DOMContentLoaded", function() {
     const aseguradoras = document.getElementById('aseguradoras');
     const btnBack = document.getElementById('back');
     const btnBackAseguradora = document.getElementById('back-aseguradora');
-
     const accordionBtns = document.querySelectorAll('.accordion-btn');
+    const agregarAseguradora = document.getElementById('agregarBtn');
 
     if (siniestros) {
         siniestros.addEventListener('click', function() {
-            window.location.href ='./ruteo.php?action=siniestros';
+            window.location.href ='./siniestros';
         });
     }
 
     if (aseguradoras) {
         aseguradoras.addEventListener('click', function() {
-            window.location.href ='./ruteo.php?action=aseguradoras';
+            window.location.href ='./aseguradoras';
         });
     }
     if (accordionBtns){
@@ -22,17 +22,15 @@ document.addEventListener("DOMContentLoaded", function() {
             btn.addEventListener('click', function() {
                 const content = this.nextElementSibling;
 
-                console.log(content); // Verifica el contenido seleccionado
+                console.log(content); 
 
-                // Ocultar todos los demás contenidos
                 const allContents = document.querySelectorAll('.accordion-content');
                 allContents.forEach(c => {
                     if (c !== content) {
-                        c.style.display = "none"; // Ocultar otros contenidos
+                        c.style.display = "none"; 
                     }
                 });
 
-                // Alternar el display del contenido correspondiente
                 if (content.style.display === "block") {
                     content.style.display = "none";
                 } else {
@@ -45,15 +43,20 @@ document.addEventListener("DOMContentLoaded", function() {
 
     if (btnBack) {
         btnBack.addEventListener('click', function() {
-            window.location.href ='./ruteo.php?action=home';
+            window.location.href ='./home';
         });
     }
     
     if (btnBackAseguradora) {
         btnBackAseguradora.addEventListener('click', function() {
-            console.log('Botón Atrás presionado');
-            window.location.href ='./ruteo.php?action=aseguradoras';
+            window.location.href ='./aseguradoras';
         });
     }
+    if (agregarAseguradora) {
+        agregarAseguradora.addEventListener('click', function() {
+            window.location.href ='./agregar';
+        });
+    }
+
     
 });

@@ -17,6 +17,11 @@ class AseguradoraView {
 
 
     }
+
+    public function formAgregarAseguradora(){
+        require_once "./templates/formAgregarAseguradora.phtml";
+
+    }
 }
 
 ?>

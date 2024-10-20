@@ -28,11 +28,6 @@ switch($params[0]){
         $controller = new SiniestroController();
         $controller -> getListSiniestros();
         break;
-    /*case "siniestro":
-        $controller = new SiniestroController();
-        $controller -> getSiniestroID();
-
-        break;*/
     case "aseguradoras":
         $controller = new AseguradoraController();
         $controller -> getListAseguradoras();
@@ -40,6 +35,10 @@ switch($params[0]){
     case "aseguradora":
         $controller = new AseguradoraController();
         $controller -> getAseguradoraId($params[1]);
+        break;
+    case "agregar":
+        $controller = new AseguradoraController($res);
+        $controller -> getAgregarAseguradora();
         break;
     case "showlogin":
         $controller = new AuthController();

@@ -2,7 +2,7 @@
 
 class AuthView{
     private $user=null;
-    public function showLogin($error=''){
+    public function showLogin(){
         require_once './templates/formLogin.phtml';
     }
 }

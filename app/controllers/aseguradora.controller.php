@@ -9,7 +9,6 @@ class AseguradoraController{
     public function __construct(){
         $this->model = new AseguradoraModel();
         $this->view = new AseguradoraView();
-
     }
 
 
@@ -21,8 +20,13 @@ class AseguradoraController{
     public function getAseguradoraId($id){
         $siniestrosAseguradora = $this->model->getsiniestrosAseguradoraId($id);
         return $this -> view -> showSiniestrosByAseguradora($siniestrosAseguradora);
+    }
+
+    public function getAgregarAseguradora(){
+        
+        return $this -> view -> formAgregarAseguradora();
+    }
 
 
     }
     
-}
