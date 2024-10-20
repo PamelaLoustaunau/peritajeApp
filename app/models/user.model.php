@@ -1,5 +1,5 @@
 <?php
-
+require_once './app/models/model.php';
 class UserModel{
     private $db;
 
@@ -8,10 +8,12 @@ class UserModel{
         $this->db = new PDO('mysql:host=localhost;dbname=peritajes;charset=utf8', 'root', '');
      }
 
-    public function getUserByEmail($user){
+    public function getUserByEmail($email){
         $query = $this->db->prepare('SELECT * FROM usuario WHERE email=?');
         $query->execute([$email]);
         $user = $query -> fetch(PDO::FETCH_OBJ);
+        var_dump($user);
+        var_dump("getUserByemail");
         return $user;
     }
 }

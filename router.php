@@ -1,6 +1,7 @@
 <?php
 require_once "./libs/response.php";
 require_once "./app/middlewares/session.auth.middleware.php";
+require_once "./app/middlewares/verify.auth.middleware.php";
 require_once "./app/controllers/siniestro.controller.php";
 require_once "./app/controllers/aseguradora.controller.php";
 require_once "./app/controllers/general.controller.php";
@@ -51,7 +52,7 @@ switch($params[0]){
         break;
     case "aseguradoraAdd":
         sessionAuthMiddleware($res);
-        verifyAuthMiddleware ($res);
+        verifyAuthMiddleware($res);
         $controller = new AseguradoraController($res);
         $controller -> getAseguradoraAdd();
         break;
@@ -113,7 +114,7 @@ switch($params[0]){
         break;
     case "login":
         $controller = new AuthController();
-        $controller -> login();
+        $controller ->login();
         break;
     case "logout":
         $controller = new AuthController();

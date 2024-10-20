@@ -7,4 +7,5 @@
             $res->user->email = $_SESSION['EMAIL_USER'];
             return;
     }
+}
 ?>

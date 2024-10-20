@@ -1,12 +1,13 @@
 <?php require_once './templates/layout/header.phtml'?>
 
-    <form method='post' action='login'>
+    <form action='login' method='POST' >
         <div class=''>
-            <label for='email' class='' id='email' name='email' required>Usuario</label>
-            <input type='text' class='' id='email'>
-            <label for='password' class='' id='password' name='password' required>Contraseña
-            <input type='password' class='' id='email'>
+            <label for='email' class='' id='email' name='email' >Usuario</label>
+            <input type='text' class='' name='email' id='email' required>
+            <label for='password' class='' id='password' name='password' >Contraseña
+            <input type='password' class='' name='password' id='email' required>
         </div>
         <button type='submit' class=''>login</button>
     </form>
+    
 <?php require_once './templates/layout/footer.phtml'?>

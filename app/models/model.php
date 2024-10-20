@@ -152,14 +152,9 @@ class Model {
               ADD CONSTRAINT `Siniestro_ibfk_1` FOREIGN KEY (`ID_Aseguradora`) REFERENCES `aseguradora` (`ID_Aseguradora`);
             COMMIT;
 END;
-            $this->db->exec($sql); // Ejecuta el SQL para crear las tablas
+            $this->db->query($sql); // Ejecuta el SQL para crear las tablas
         }
     }
 
-    /*private function createDb() {
-        $pdo = new PDO('mysql:host=' . MYSQL_HOST, MYSQL_USER, MYSQL_PASS);
-        $pdo->exec("CREATE DATABASE IF NOT EXISTS " . MYSQL_DB);
-        return $pdo;
-    }*/
 }
 ?>
