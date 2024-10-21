@@ -14,7 +14,7 @@
     <label for='id_aseguradora' class=''>
                 Aseguradora:
             </label>
-            <select name='git' class='' required>
+            <select name='id_aseguradora' class='' required>
                 <?php foreach($siniestroAseguradoras as $key => $siniestroAseguradora): ?>
                     <option  value='<?php echo $siniestroAseguradora->ID_Aseguradora?>'><?php echo $siniestroAseguradora->Nombre?></option>
             <?php endforeach ?>
