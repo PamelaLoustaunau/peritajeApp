@@ -11,9 +11,6 @@ class AseguradoraView {
     public function showAseguradoras($aseguradoras){
         
         require_once "./templates/aseguradoras.phtml";
-
-
-
     }
 
 

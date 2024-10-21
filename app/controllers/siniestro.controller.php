@@ -6,9 +6,9 @@ class SiniestroController{
     private $model;
     private $view;
 
-    public function __construct($res){
+    public function __construct(/*$res*/){
         $this->model = new SiniestroModel();
-        $this->view = new SiniestroView($res->$user);
+        $this->view = new SiniestroView(/*$res->$user*/);
 
     }
 
@@ -18,18 +18,20 @@ class SiniestroController{
         return $this -> view -> showSiniestros($siniestros);
     }
 
-    public function getAgregarSiniestro(){
-        
-        return $this -> view -> formAddSiniestro();
+    public function getSiniestroId(){
+        $siniestroAseguradoras = $this->model->getsiniestroAseguradoraId();
+        return $this -> view -> showSiniestroByAseguradora($siniestroAseguradoras);
     }
 
+   
+
     public function getSiniestroAdd(){
-        $aseguradora = $_POST['aseguradora'];
+        $aseguradoraId = $_POST['id_aseguradora'];
         $date = $_POST['date'];
         $typeSiniestro = $_POST['typeSiniestro'];
-        $asegurado = $_POST['name'];
+        $asegurado = $_POST['asegurado'];
         
-        $id = $this->model->siniestroaAdd($date, $typeSiniestro, $asegurado, $aseguradora); 
+        $id = $this->model->siniestroaAdd($date, $typeSiniestro, $asegurado, $aseguradoraId); 
         header('Location: ' . BASE_URL.'siniestros');
     }
 
