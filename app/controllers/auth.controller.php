@@ -31,7 +31,7 @@ class AuthController {
         //verificar el usuario
         $user= $this-> model-> getUserByEmail($email);
         
-        error_log("DEBUG: Pass ".$password. " Hasheado ".password_hash($password, PASSWORD_DEFAULT));
+        //error_log("DEBUG: Pass ".$password. " Hasheado ".password_hash($password, PASSWORD_DEFAULT));
 
 
          // pasword_verify es una función que chequea 
@@ -39,13 +39,13 @@ class AuthController {
        
         if(password_verify($password,$user->password) ){
                 session_start();
-                error_log("DEBUG: entró al if con pass ".$password);
+                //error_log("DEBUG: entró al if con pass ".$password);
      
             //guardo en la sesión el Id del usuario
             $_SESSION['ID_USER'] = $user->id; 
             $_SESSION['EMAIL_USER'] = $user->email;
             //redirección al home
-            header('Location: '.BASE_URL.'agregarAseguradora');
+            header('Location: '.BASE_URL);
         } 
         
         else {
