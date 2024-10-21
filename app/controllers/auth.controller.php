@@ -17,20 +17,21 @@ class AuthController {
 
     public function login(){  //la acción de login
 
-        /*if (!isset($_POST['email']) || empty($_POST['email'])){
+        if (!isset($_POST['email']) || empty($_POST['email'])){
             return $this-> view-> showLogin ('Falta completar el nombre de usuario');
         } 
 
         if (!isset($_POST['password']) || empty($_POST['password'])){
             return $this-> view-> showLogin('Falta completar la contraseña');
-        } */
+        } 
 
         $email  = $_POST['email'];
         $password = $_POST['password'];
 
         //verificar el usuario
         $user= $this-> model-> getUserByEmail($email);
-        var_dump("hola login" );
+        
+        error_log("DEBUG: Pass ".$password. " Hasheado ".password_hash($password, PASSWORD_DEFAULT));
 
 
          // pasword_verify es una función que chequea 
@@ -38,9 +39,8 @@ class AuthController {
        
         if(password_verify($password,$user->password) ){
                 session_start();
-
-            var_dump("hola entre al if");
-
+                error_log("DEBUG: entró al if con pass ".$password);
+     
             //guardo en la sesión el Id del usuario
             $_SESSION['ID_USER'] = $user->id; 
             $_SESSION['EMAIL_USER'] = $user->email;
@@ -48,10 +48,10 @@ class AuthController {
             header('Location: '.BASE_URL.'agregarAseguradora');
         } 
         
-        /*else {
+        else {
             return $this->view->showLogin('Credenciales incorrectas');
-        }*/
-        var_dump("ya pase el if" );
+        }
+
 
         }
 
