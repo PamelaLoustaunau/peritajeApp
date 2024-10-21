@@ -30,8 +30,8 @@ switch($params[0]){
         $controller -> getHome();
         break;
     case "siniestros":
-        //sessionAuthMiddleware($res);
-        $controller = new SiniestroController(/*$res*/);
+        sessionAuthMiddleware($res);
+        $controller = new SiniestroController($res);
         $controller -> getListSiniestros();
         break;
     case "aseguradoras":
@@ -45,8 +45,8 @@ switch($params[0]){
         $controller -> getAseguradoraId($params[1]);
         break;
     case "siniestro":
-        //sessionAuthMiddleware($res);
-        $controller = new SiniestroController(/*$res*/);
+        sessionAuthMiddleware($res);
+        $controller = new SiniestroController($res);
         $controller -> getSiniestroId();
         break;
     
@@ -83,27 +83,27 @@ switch($params[0]){
         break;
 
     case "siniestroAdd":
-        //sessionAuthMiddleware($res);
-        //verifyAuthMiddleware ($res);
+        sessionAuthMiddleware($res);
+        verifyAuthMiddleware ($res);
         $controller = new SiniestroController(/*$res*/);
         $controller -> getSiniestroAdd();
         break;
     case "siniestroDelete":
-        //sessionAuthMiddleware($res);
-        //verifyAuthMiddleware ($res);
-        $controller = new SiniestroController(/*$res*/);
+        sessionAuthMiddleware($res);
+        verifyAuthMiddleware ($res);
+        $controller = new SiniestroController($res);
         $controller -> getsiniestrodelete($params[1]);
         break;
     case "modificarSiniestro":
-        //sessionAuthMiddleware($res);
-        //verifyAuthMiddleware ($res);
-        $controller = new SiniestroController(/*$res*/);
+        sessionAuthMiddleware($res);
+        verifyAuthMiddleware ($res);
+        $controller = new SiniestroController($res);
         $controller -> getSiniestroModify($params[1]);
         break;
     case "modifySiniestro":
-        //sessionAuthMiddleware($res);
-        //verifyAuthMiddleware ($res);
-        $controller = new SiniestroController(/*$res*/);
+        sessionAuthMiddleware($res);
+        verifyAuthMiddleware ($res);
+        $controller = new SiniestroController($res);
         $controller -> getModifySiniestro($params[1]);
         break;
     
