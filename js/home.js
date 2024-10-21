@@ -61,7 +61,7 @@ document.addEventListener("DOMContentLoaded", function() {
     }
     if (agregarsiniestro) {
         agregarsiniestro.addEventListener('click', function() {
-            window.location.href ='./agregarSiniestro';
+            window.location.href ='./siniestro';
         });
     }
 
