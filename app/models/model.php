@@ -55,7 +55,6 @@ class Model {
 
             -- Insertar datos en la tabla `siniestro`
             INSERT INTO `siniestro` (`ID_Siniestro`, `Fecha`, `Tipo_Siniestro`, `Asegurado`, `ID_Aseguradora`) VALUES
-            (1, '2024-09-09', 'robo', 'Juan Perez', 2),
             (2, '2024-05-15', 'Incendio', 'Maria Garcia', 5),
             (3, '2024-01-10', 'robo', 'Jose Sanchez', 4),
             (4, '2024-09-12', 'robo', 'Rosa Molina', 1),
