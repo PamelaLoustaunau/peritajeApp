@@ -21,7 +21,6 @@ Tener instalado XAMPP.
 Clonar el repositorio remoto desde la terminal en tu repositorio local o descarga los archivos ZIP y descomprímelos en tu computadora dentro de la carpeta del proyecto a C:\xampp\htdocs (windows) o C:\opt\lampp\htdocs(linux).
 
 ## Clonar repositotio: 
-(Tuvimos inconvenientes con este repositorio asociado a la planilla de entrega, por lo tanto, ante cualquier error durante la ejecucion dejamos a continuación un enlace alternativo para clonar)
 
 git clone https://github.com/PamelaLoustaunau/peritajeApp.git 
 
