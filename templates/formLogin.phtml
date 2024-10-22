@@ -1,5 +1,9 @@
 <?php require_once './templates/layout/header.phtml'?>
-
+<?php if (!empty($error)): ?>
+    <div class="" role="alert">
+        <?= htmlspecialchars($error) ?>
+    </div>
+<?php endif; ?>
     <form action='login' method='POST' >
         <div class=''>
             <label for='email' class='' id='email' name='email' >Usuario</label>

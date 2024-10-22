@@ -7,8 +7,8 @@ class Model {
     public function __construct() {
         $this->db = $this->createDb(); 
         $this->db = new PDO(
-            "mysql:host=" . MYSQL_HOST .
-            ";dbname=" . MYSQL_DB . ";charset=utf8", 
+            'mysql:host=' . MYSQL_HOST .
+            ';dbname=' . MYSQL_DB . ';charset=utf8', 
             MYSQL_USER, MYSQL_PASS
         ); 
         $this->deploy(); 
@@ -154,6 +154,12 @@ END;
             $this->db->query($sql); // Ejecuta el SQL para crear las tablas
         }
     }
+    private function createDb(){
+      $nombreDb = MYSQL_DB;
+      $pdo = new PDO('mysql:host =' . MYSQL_HOST.';charset = utf8', MYSQL_USER, MYSQL_PASS);
+      $query = "CREATE DATABASE IF NOT EXISTS $nombreDb";
+      $pdo->exec($query);
+  }
 
 }
 ?>
