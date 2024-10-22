@@ -31,8 +31,6 @@ ul{
     width: 98%;
 
 }
-
-
 .accordion-btn{
     background-color: #d387f1fd;
     cursor: pointer;
@@ -66,7 +64,7 @@ ul{
     display: flex;
     justify-content: center;
 }
-#back, #back-aseguradora, .agregarBtn {
+.back, #back, .back-aseguradora, .agregarBtn {
     background-color: rgb(86, 98, 119);
     padding: 1rem;
     width: 20%;

@@ -26,6 +26,7 @@ class AseguradoraController{
         
         return $this -> view -> formAddAseguradora();
     }
+
     public function getAseguradoraAdd(){
         $name = $_POST['name'];
         $adress = $_POST['adress'];
@@ -39,6 +40,7 @@ class AseguradoraController{
         header('Location: ' . BASE_URL.'aseguradoras');
 
     }
+
     public function getAseguradoraModify($id){
         $aseguradora = $this->model-> modifyAseguradora($id);
         return $this -> view -> formModifyAseguradora($aseguradora);
@@ -50,7 +52,7 @@ class AseguradoraController{
         $email = $_POST['email'];
          $this->model->aseguradoraModify($name, $adress, $email,  $id);
         header('Location: ' . BASE_URL.'aseguradoras');
+    }
 
-    }
-    }
+}
     

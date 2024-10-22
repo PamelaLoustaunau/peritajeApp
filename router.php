@@ -43,14 +43,7 @@ switch($params[0]){
         sessionAuthMiddleware($res);
         $controller = new AseguradoraController($res);
         $controller -> getAseguradoraId($params[1]);
-        break;
-    case "siniestro":
-        sessionAuthMiddleware($res);
-        $controller = new SiniestroController($res);
-        $controller -> getSiniestroId();
-        break;
-    
-    
+        break;  
     case "agregarAseguradora":
         sessionAuthMiddleware($res);
         verifyAuthMiddleware ($res);
@@ -81,11 +74,16 @@ switch($params[0]){
         $controller = new AseguradoraController($res);
         $controller -> getModifyAseguradora($params[1]);
         break;
-
+    case "agregarSiniestro":
+        sessionAuthMiddleware($res);
+        verifyAuthMiddleware ($res);
+        $controller = new SiniestroController($res);
+        $controller -> getSiniestroId();
+        break;
     case "siniestroAdd":
         sessionAuthMiddleware($res);
         verifyAuthMiddleware ($res);
-        $controller = new SiniestroController(/*$res*/);
+        $controller = new SiniestroController($res);
         $controller -> getSiniestroAdd();
         break;
     case "siniestroDelete":

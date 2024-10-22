@@ -6,12 +6,10 @@ class SiniestroController{
     private $model;
     private $view;
 
-    public function __construct(/*$res*/){
+    public function __construct($res){
         $this->model = new SiniestroModel();
-        $this->view = new SiniestroView(/*$res->$user*/);
-
+        $this->view = new SiniestroView($res->user);
     }
-
 
     public function getListSiniestros(){
         $siniestros = $this->model->getSiniestros();
@@ -23,14 +21,11 @@ class SiniestroController{
         return $this -> view -> showSiniestroByAseguradora($siniestroAseguradoras);
     }
 
-   
-
     public function getSiniestroAdd(){
         $aseguradoraId = $_POST['id_aseguradora'];
         $date = $_POST['date'];
         $typeSiniestro = $_POST['typeSiniestro'];
         $asegurado = $_POST['asegurado'];
-        
         $id = $this->model->siniestroaAdd($date, $typeSiniestro, $asegurado, $aseguradoraId); 
         header('Location: ' . BASE_URL.'siniestros');
     }
@@ -38,7 +33,6 @@ class SiniestroController{
     public function getsiniestrodelete($id){
         $this->model->deleteSiniestro($id);
         header('Location: ' . BASE_URL.'siniestros');
-
     }
 
     public function getSiniestroModify($id){
@@ -52,15 +46,6 @@ class SiniestroController{
         $asegurado = $_POST['asegurado'];
         $this->model->siniestroModify($date, $typeSiniestro, $asegurado,  $id);
         header('Location: ' . BASE_URL.'siniestros');
-
     }
-
-
-
-
-
-
-
-
      
 }
