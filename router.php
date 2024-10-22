@@ -106,9 +106,6 @@ switch($params[0]){
         $controller = new SiniestroController($res);
         $controller -> getModifySiniestro($params[1]);
         break;
-    
-       
-    
 
     case "showlogin":
         $controller = new AuthController();

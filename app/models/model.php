@@ -91,10 +91,9 @@ class Model {
             --
             
             INSERT INTO `usuario` (`id`, `email`, `password`) VALUES
-            (1, 'webadmin', '$2y$10$rMiPv8I.rHrw1BXy/hHEFOxet.WJle.kiN2QDP6NHIVeA9d6n7HBW'),
-            (2, 'pame', '$2y$10$Cb8uAe3yyZ/FlLU5WwxTDug1QweYs/20qCb1y5slVCczfLtPf0KkK'),
-            (3, 'sole', '$2y$10$R1G9S5.pJ0DUrvE6G2nbceYLAOhaVBDv82NDl2fgelLvQGp4Dxhr2');
-            
+            (1, 'webadmin', '$2y$10$Q.4NGnWTZ.zriHtpiHp7DeuuYozXxXiynpxQcm25H048qHrCh3F/q'),
+            (2, 'pame', '$2y$10$sYYKH9FBW5R8ANcY63903eMZ48SFPEep8BFL6g44JSDPkybbSUtUK'),
+            (3, 'sole', '$2y$10$18PaXTbOjnLLgsz6.CqzWeF5eGJkdlNmGWBDuDt/GsjS.1RQD5lXC');            
             --
             -- Índices para tablas volcadas
             --
@@ -154,12 +153,7 @@ END;
             $this->db->query($sql); // Ejecuta el SQL para crear las tablas
         }
     }
-    private function createDb(){
-      $nombreDb = MYSQL_DB;
-      $pdo = new PDO('mysql:host =' . MYSQL_HOST.';charset = utf8', MYSQL_USER, MYSQL_PASS);
-      $query = "CREATE DATABASE IF NOT EXISTS $nombreDb";
-      $pdo->exec($query);
-  }
+
 
 }
 ?>

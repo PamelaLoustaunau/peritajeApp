@@ -2,10 +2,10 @@
 -- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
--- Host: localhost
--- Generation Time: Oct 21, 2024 at 06:34 AM
--- Server version: 10.4.32-MariaDB
--- PHP Version: 8.2.12
+-- Servidor: 127.0.0.1
+-- Tiempo de generación: 20-10-2024 a las 08:33:40
+-- Versión del servidor: 10.4.32-MariaDB
+-- Versión de PHP: 8.2.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,13 +18,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `peritajes`
+-- Base de datos: `peritajes`
 --
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `aseguradora`
+-- Estructura de tabla para la tabla `aseguradora`
 --
 
 CREATE TABLE `aseguradora` (
@@ -35,7 +35,7 @@ CREATE TABLE `aseguradora` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `aseguradora`
+-- Volcado de datos para la tabla `aseguradora`
 --
 
 INSERT INTO `aseguradora` (`ID_Aseguradora`, `Nombre`, `Direccion`, `Mail`) VALUES
@@ -51,7 +51,7 @@ INSERT INTO `aseguradora` (`ID_Aseguradora`, `Nombre`, `Direccion`, `Mail`) VALU
 -- --------------------------------------------------------
 
 --
--- Table structure for table `siniestro`
+-- Estructura de tabla para la tabla `siniestro`
 --
 
 CREATE TABLE `siniestro` (
@@ -63,10 +63,11 @@ CREATE TABLE `siniestro` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `siniestro`
+-- Volcado de datos para la tabla `siniestro`
 --
 
 INSERT INTO `siniestro` (`ID_Siniestro`, `Fecha`, `Tipo_Siniestro`, `Asegurado`, `ID_Aseguradora`) VALUES
+(1, '2024-09-09', 'robo', 'Juan Perez', 2),
 (2, '2024-05-15', 'Incendio', 'Maria Garcia', 5),
 (3, '2024-01-10', 'robo', 'Jose Sanchez', 4),
 (4, '2024-09-12', 'robo', 'Rosa Molina', 1),
@@ -95,7 +96,7 @@ INSERT INTO `siniestro` (`ID_Siniestro`, `Fecha`, `Tipo_Siniestro`, `Asegurado`,
 -- --------------------------------------------------------
 
 --
--- Table structure for table `usuario`
+-- Estructura de tabla para la tabla `usuario`
 --
 
 CREATE TABLE `usuario` (
@@ -105,65 +106,65 @@ CREATE TABLE `usuario` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `usuario`
+-- Volcado de datos para la tabla `usuario`
 --
 
 INSERT INTO `usuario` (`id`, `email`, `password`) VALUES
-(1, 'webadmin', '$2y$10$hRTHlvL4tbjMAWv8/miZueduHEEHz9u.J65IoChLxuGYoeR9UlmYm'),
-(2, 'pame', '$2y$10$0X79.I1IjpBgLT8ZMNV5buc5TWP58qzxhGpN3FfuxHvBK.3Oqi4mK'),
-(3, 'sole', '$2y$10$9LmeXE8yh5zo/rtfhbWwe.35zPtQMwCGnd2DE.6QaWqgd83dWrLwq');
+(1, 'webadmin', '$2y$10$rMiPv8I.rHrw1BXy/hHEFOxet.WJle.kiN2QDP6NHIVeA9d6n7HBW'),
+(2, 'pame', '$2y$10$Cb8uAe3yyZ/FlLU5WwxTDug1QweYs/20qCb1y5slVCczfLtPf0KkK'),
+(3, 'sole', '$2y$10$R1G9S5.pJ0DUrvE6G2nbceYLAOhaVBDv82NDl2fgelLvQGp4Dxhr2');
 
 --
--- Indexes for dumped tables
+-- Índices para tablas volcadas
 --
 
 --
--- Indexes for table `aseguradora`
+-- Indices de la tabla `aseguradora`
 --
 ALTER TABLE `aseguradora`
   ADD PRIMARY KEY (`ID_Aseguradora`);
 
 --
--- Indexes for table `siniestro`
+-- Indices de la tabla `siniestro`
 --
 ALTER TABLE `siniestro`
   ADD PRIMARY KEY (`ID_Siniestro`),
   ADD KEY `ID_Aseguradora` (`ID_Aseguradora`);
 
 --
--- Indexes for table `usuario`
+-- Indices de la tabla `usuario`
 --
 ALTER TABLE `usuario`
   ADD PRIMARY KEY (`id`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- AUTO_INCREMENT de las tablas volcadas
 --
 
 --
--- AUTO_INCREMENT for table `aseguradora`
+-- AUTO_INCREMENT de la tabla `aseguradora`
 --
 ALTER TABLE `aseguradora`
-  MODIFY `ID_Aseguradora` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `ID_Aseguradora` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
--- AUTO_INCREMENT for table `siniestro`
+-- AUTO_INCREMENT de la tabla `siniestro`
 --
 ALTER TABLE `siniestro`
-  MODIFY `ID_Siniestro` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
+  MODIFY `ID_Siniestro` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
 
 --
--- AUTO_INCREMENT for table `usuario`
+-- AUTO_INCREMENT de la tabla `usuario`
 --
 ALTER TABLE `usuario`
   MODIFY `id` int(40) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- Constraints for dumped tables
+-- Restricciones para tablas volcadas
 --
 
 --
--- Constraints for table `siniestro`
+-- Filtros para la tabla `siniestro`
 --
 ALTER TABLE `siniestro`
   ADD CONSTRAINT `Siniestro_ibfk_1` FOREIGN KEY (`ID_Aseguradora`) REFERENCES `aseguradora` (`ID_Aseguradora`);

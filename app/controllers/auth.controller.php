@@ -31,7 +31,7 @@ class AuthController {
         //verificar el usuario
         $user= $this-> model-> getUserByEmail($email);
         
-        error_log("DEBUG: Pass ".$password. " Hasheado ".password_hash($password, PASSWORD_DEFAULT));
+       // error_log("DEBUG: Pass ".$password. " Hasheado ".password_hash($password, PASSWORD_DEFAULT));
 
 
          // pasword_verify es una función que chequea 

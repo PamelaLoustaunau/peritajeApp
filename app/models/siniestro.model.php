@@ -24,10 +24,6 @@ class SiniestroModel{
 
 
 
-        /*$query = $this -> db->prepare('SELECT * FROM aseguradora WHERE ID_Aseguradora=?');
-        $query->execute([$id]);
-        $siniestroAseguradoraId = $query -> fetch(PDO::FETCH_OBJ);
-        return $siniestroAseguradoraId;*/
 
     }
 
