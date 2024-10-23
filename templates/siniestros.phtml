@@ -3,8 +3,8 @@
 <h1>Siniestros</h1>
         <div class='accordion'>
         <?php foreach ($siniestros as $key => $siniestro):?>
-            <div class='contentAseguradora'>
-                <button class='accordion-btn' id='accordion-btn-$key'>
+            <div class='contentSiniestros'>
+                <button class='accordion-btn siniestroBtn' id='accordion-btn-$key'>
                 <?php echo 'Nombre y Apellido: '. $siniestro->Asegurado?><?php echo ' - Fecha: '. $siniestro->Fecha?>
                 </button>
                 <div class='accordion-content' id='accordion-content-$key'>

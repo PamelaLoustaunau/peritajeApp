@@ -5,13 +5,13 @@
     </div>
 <?php endif; ?>
     <form action='login' method='POST' >
-        <div class=''>
-            <label for='email' class='' id='email' name='email' >Usuario</label>
-            <input type='text' class='' name='email' id='email' required>
-            <label for='password' class='' id='password' name='password' >Contraseña
-            <input type='password' class='' name='password' id='email' required>
+        <div class='form-login'>
+            <label for='email' class='formLoginLabel' id='email' name='email' >Usuario</label>
+            <input type='text' class='formLoginBtn' name='email' id='email' placeholder="Introduce tu usuario" required>
+            <label for='password' class='formLoginLabel' id='password' name='password' >Contraseña</label>
+            <input type='password' class='formLoginBtn' name='password' id='password'placeholder="Introduce tu contraseña"  required>
+            <button type='submit' class='btnLogin'>login</button>
         </div>
-        <button type='submit' class=''>login</button>
     </form>
     
 <?php require_once './templates/layout/footer.phtml'?>
