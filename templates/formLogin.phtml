@@ -4,14 +4,18 @@
         <?= htmlspecialchars($error) ?>
     </div>
 <?php endif; ?>
+<div class='background-login'>
     <form action='login' method='POST' >
         <div class='form-login'>
+            <h1>Iniciar Sección</h1>
+            <p class='p-login'>Ingrese su Usuario y Contraseña para habilitar propiedades de la App</p>
             <label for='email' class='formLoginLabel' id='email' name='email' >Usuario</label>
             <input type='text' class='formLoginBtn' name='email' id='email' placeholder="Introduce tu usuario" required>
             <label for='password' class='formLoginLabel' id='password' name='password' >Contraseña</label>
             <input type='password' class='formLoginBtn' name='password' id='password'placeholder="Introduce tu contraseña"  required>
-            <button type='submit' class='btnLogin'>login</button>
+            <button type='submit'  class='btnLogin'>Login</button>
         </div>
     </form>
+</div>
     
 <?php require_once './templates/layout/footer.phtml'?>

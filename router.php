@@ -11,6 +11,7 @@ require_once "./app/controllers/auth.controller.php";
 define('BASE_URL', '//'.$_SERVER['SERVER_NAME'] . ':' . $_SERVER['SERVER_PORT'] . dirname($_SERVER['PHP_SELF']).'/');
 
 $res= new Response();
+
 //no empty es para preguntar y ver que NO LLEGUE VACIA; si tiene algun dato ingresa y lo guarda en action, sino action es igual a vacio.
 if(!empty($_GET["action"])){
     $action = $_GET["action"];
@@ -26,6 +27,7 @@ switch($params[0]){
         //si no estás logueado te redirige al showlogin
         //cuando pasamos el $res a un controlador, todas las veces que lo llamemos tenemos que pasarle el $res
         //verifyAuthMiddleware($res) sólo va en los case privados ABM
+
         $controller = new GeneralController($res);
         $controller -> getHome();
         break;

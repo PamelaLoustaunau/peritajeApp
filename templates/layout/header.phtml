@@ -1,4 +1,6 @@
-
+<?php
+$isLoggedIn = isset($_SESSION['ID_USER']); // Verifica si el usuario está logueado
+?>
 <head>
     <base href="<?= BASE_URL ?>">
     <link rel="stylesheet" href="./style/style.css">
@@ -15,7 +17,11 @@
             <li><a href="home">INICIO</a></li>
             <li><a href="aseguradoras">ASEGURADORAS</a></li>
             <li><a href="siniestros">SINIESTROS</a></li>
-            <li><a href="showlogin">LOGIN</a></li>
+            <?php if ($isLoggedIn): ?>
+                <li><a id="logoutButton" href="<?php echo BASE_URL; ?>logout">LOGOUT</a></li>
+            <?php else: ?>
+                <li><a id="loginButton" href="<?php echo BASE_URL; ?>showlogin">LOGIN</a></li>
+            <?php endif; ?>
         </ul>
     </nav>
 </body>

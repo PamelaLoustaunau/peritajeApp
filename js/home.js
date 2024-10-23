@@ -2,10 +2,27 @@ document.addEventListener("DOMContentLoaded", function() {
     const siniestros = document.getElementById('siniestros'); 
     const aseguradoras = document.getElementById('aseguradoras');
     const btnBack = document.getElementById('back');
+    const logoutButton = document.getElementById('logoutButton');
+    const loginButton = document.getElementById('loginButton');
     const btnBackAseguradora = document.getElementById('back-aseguradora');
     const accordionBtns = document.querySelectorAll('.accordion-btn');
     const agregarAseguradora = document.getElementById('addAseguradoraBtn');
     const agregarsiniestro = document.getElementById('addSiniestroBtn');
+
+    
+    if (logoutButton) {
+        logoutButton.addEventListener('click', function(event) {
+            event.preventDefault();
+            window.location.href = './logout';
+        });
+    }
+
+    if (loginButton) {
+        loginButton.addEventListener('click', function(event) {
+            event.preventDefault();
+            window.location.href = './showlogin';
+        });
+    }
 
 
     if (siniestros) {
