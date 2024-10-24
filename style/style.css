@@ -223,8 +223,12 @@ form{
     border-radius: 6px;
     background-color: #6d5d70;
     color: white;
-
-
+}
+.error{
+    background-color: #394C60;
+    padding: 0.8rem;
+    color: white;
+    font-size: larger;
 }
 
 .abm-btn{
@@ -234,6 +238,7 @@ form{
     height: 5vh;
 
 }
+
 
 
 
