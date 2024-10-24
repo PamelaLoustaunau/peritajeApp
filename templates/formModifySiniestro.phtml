@@ -1,18 +1,20 @@
 <?php require_once './templates/layout/header.phtml' ?>
-
- <form action='modifySiniestro/<?php echo $siniestro->ID_Siniestro?>' method='POST'>
-    <h1>Modificar Siniestro</h1>
-    <div>
-        <label for='name' class='labelAdd'>Nombre Asegurado</label>
-        <input type='text' name='asegurado' class='inputAdd' value ='<?php echo $siniestro->Asegurado ?>' required>
-        <label for='typeSiniestro' class='labelAdd'>Tipo de Siniestro</label>
-        <input type='text' name='typeSiniestro' value ='<?php echo $siniestro->Tipo_Siniestro ?>' class='inputAdd' required>
-        <label for='date' class='labelAdd'>Fecha</label>
-        <input type='text' name='date' value ='<?php echo $siniestro->Fecha?>' class='inputAdd' required>
+<div class='background-modifySiniestro'>
+    <form action='modifySiniestro/<?php echo $siniestro->ID_Siniestro?>' method='POST'>
+        <div class='form-modifySiniestro'>
+            <h1>Modificar Siniestro</h1>
+            <label for='name' class='labelAdd'>Nombre Asegurado</label>
+            <input type='text' name='asegurado' class='inputAdd' value ='<?php echo $siniestro->Asegurado ?>' required>
+            <label for='typeSiniestro' class='labelAdd'>Tipo de Siniestro</label>
+            <input type='text' name='typeSiniestro' value ='<?php echo $siniestro->Tipo_Siniestro ?>' class='inputAdd' required>
+            <label for='date' class='labelAdd'>Fecha</label>
+            <input type='text' name='date' value ='<?php echo $siniestro->Fecha?>' class='inputAdd' required>
+            <button type='submit' class='btnModificar'>Modificar</button>
+        </div>
+    </form>
+    <div class = btn-back>
+    <button class='back'><a href="siniestros">Atrás</a</button>
     </div>
-    <button type='submit'>Modificar</button>
-</form>
-<div class = btn-back>
-<button class='back'><a href="siniestros">Atrás</a</button>
 </div>
+
 <?php require_once './templates/layout/footer.phtml' ?>

@@ -1,18 +1,20 @@
 <?php require_once './templates/layout/header.phtml' ?>
-
- <form action='modifyaseguradora/<?php echo $aseguradora->ID_Aseguradora?>' method='POST'>
-    <h1>Modificar Aseguradora</h1>
-    <div>
-        <label for='name' class='labelAdd'>Nombre Aseguradora</label>
-        <input type='text' name='name' class='inputAdd' value ='<?php echo $aseguradora->Nombre ?>' required>
-        <label for='adress' class='labelAdd'>Dirección</label>
-        <input type='text' name='adress' value ='<?php echo $aseguradora->Direccion ?>' class='inputAdd' required>
-        <label for='email' class='labelAdd'>Email</label>
-        <input type='email' name='email' value ='<?php echo $aseguradora->Mail ?>' class='inputAdd' required>
+<div class='background-modifyAseguradora'>
+    <form action='modifyaseguradora/<?php echo $aseguradora->ID_Aseguradora?>' method='POST'>
+        <div class='form-modifyAseguradora'>
+            <h1>Modificar Aseguradora</h1>
+            <label for='name' class='labelAdd'>Nombre Aseguradora</label>
+            <input type='text' name='name' class='inputAdd' value ='<?php echo $aseguradora->Nombre ?>' required>
+            <label for='adress' class='labelAdd'>Dirección</label>
+            <input type='text' name='adress' value ='<?php echo $aseguradora->Direccion ?>' class='inputAdd' required>
+            <label for='email' class='labelAdd'>Email</label>
+            <input type='email' name='email' value ='<?php echo $aseguradora->Mail ?>' class='inputAdd' required>
+            <button type='submit' class='btnModificar'>Modificar</button>
+        </div>
+    </form>
+    <div class = btn-back>
+    <button class='back'><a href="aseguradoras">Atrás</a</button>
     </div>
-    <button type='submit'>Modificar</button>
-</form>
-<div class = btn-back>
-<button class='back'><a href="aseguradoras">Atrás</a</button>
 </div>
+
 <?php require_once './templates/layout/footer.phtml' ?>

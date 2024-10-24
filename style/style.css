@@ -20,6 +20,7 @@ ul li {
     list-style: none;
 }
 a{
+    color: white;
     text-decoration: none ;
 }
 
@@ -71,6 +72,10 @@ h1{
     padding: 1rem;
     color: #394C60;
 }
+.titulo-addsiniestro{
+    font-size: 3rem;
+
+}
 .content-home{
     display: flex;
     gap: 4rem;
@@ -98,15 +103,15 @@ h1{
 #aseguradoras, .aseguradoraBtn{
     background-color: #d8b9aa;
 }
-.background-home{
+.background-home, .background-modifyAseguradora, .background-modifySiniestro{
     background-image: url(../images/fondo-Home.jpg);
 
 }
-.background-login{
+.background-login, .background-addAseguradora, .background-addSiniestro{
     background-image: url(../images/fondo-Login.jpg);
 }
 
-.background-login, .background-home{
+.background-login, .background-home, .background-addAseguradora, .background-addSiniestro, .background-modifyAseguradora, .background-modifySiniestro{
     background-repeat: no-repeat;
     background-size: cover;
     height: 100vh;
@@ -115,20 +120,21 @@ h1{
 }
 form{
     width: 90vw;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 0;
+    margin-top: 2rem;
 }
 
-.form-login{
+.form-login, .form-addAseguradora, .form-addSiniestro, .form-modifyAseguradora, .form-modifySiniestro{
     display: grid;
     justify-items: center;
     background: #b1c5d496;
     width: 40vw;
     height: 65vh;
     padding: 2rem;
-    position: relative;
-    left: 18rem;
     align-content: center;
     border-radius: 5px;
-    top: 3rem;
     border-style:groove
 }
 .p-login{
@@ -137,23 +143,24 @@ form{
     text-align: center;
     font-style: italic;
 }
-.formLoginLabel{
+.formLoginLabel, .labelAdd{
     padding: 1rem 0 0.3rem 0;
     font-size: larger;
     font-weight: bold;
 }
-.formLoginBtn{
+.input-formLogin, .inputAdd{
     padding: 0.8rem;
     font-size: 1rem;
     width: 60%;
     border-radius: 10px;
 
 }
-.btnLogin{
+.btnLogin, .btnGuardar, .btnModificar{
     margin-top: 3rem;
     padding: 0.3rem 2rem 0.3rem 2rem;
     font-size: 1.4rem;
     background-color: #6a7793;
+    border-radius: 6px;
 }
 .siniestrosAseguradora{
     background-color: #71879a;
@@ -207,13 +214,17 @@ form{
     display: flex;
     justify-content: center;
 }
-
 .back, #back, .back-aseguradora, .agregarBtn {
-    background-color: #71879a;
-    padding: 1rem;
     width: 20%;
     font-size: 1.5rem;
     margin: 1rem;
+}
+.abm-btn, .back, .agregarBtn{
+    border-radius: 6px;
+    background-color: #6d5d70;
+    color: white;
+
+
 }
 
 .abm-btn{
@@ -221,6 +232,7 @@ form{
     top: 37%;
     left: -260%;
     height: 5vh;
+
 }
 
 

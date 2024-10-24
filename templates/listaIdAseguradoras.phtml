@@ -1,29 +1,26 @@
 <?php require_once './templates/layout/header.phtml' ?>
-
- <form action='siniestroAdd' method='POST'>
-    <h1>Agregar Siniestro</h1>
-    <div>
-        <label for='asegurado' class='labelAdd'>Nombre Asegurado</label>
-        <input type='text' name='asegurado' class='inputAdd' required>
-        <label for='typeSiniestro' class='labelAdd'>Tipo de Siniestro</label>
-        <input type='text' name='typeSiniestro' class='inputAdd' required>
-        <label for='date' class='labelAdd'>Fecha</label>
-        <input type='date' name='date' class='inputAdd' required>
+<div class='background-addSiniestro'>
+    <form action='siniestroAdd' method='POST'>
+        <div class='form-addSiniestro'>
+            <h1 class='titulo-addsiniestro'>Agregar Siniestro</h1>
+            <label for='asegurado' class='labelAdd'>Nombre Asegurado</label>
+            <input type='text' name='asegurado' class='inputAdd' required>
+            <label for='typeSiniestro' class='labelAdd'>Tipo de Siniestro</label>
+            <input type='text' name='typeSiniestro' class='inputAdd' required>
+            <label for='date' class='labelAdd'>Fecha</label>
+            <input type='date' name='date' class='inputAdd' required>
+            <label for='id_aseguradora' class='labelAdd'>Aseguradora:</label>
+                <select name='id_aseguradora' class='inputAdd' required>
+                    <?php foreach($siniestroAseguradoras as $key => $siniestroAseguradora): ?>
+                        <option  value='<?php echo $siniestroAseguradora->ID_Aseguradora?>'><?php echo $siniestroAseguradora->Nombre?></option>
+                    <?php endforeach ?>
+                </select>
+            <button type='submit' class='btnGuardar'>Guadar</button>
+        </div>
+    </form>
+    <div class = btn-back>
+        <button class='back'><a href="siniestros">Atrás</a></button>
     </div>
-
-    <label for='id_aseguradora' class=''>
-                Aseguradora:
-            </label>
-            <select name='id_aseguradora' class='' required>
-                <?php foreach($siniestroAseguradoras as $key => $siniestroAseguradora): ?>
-                    <option  value='<?php echo $siniestroAseguradora->ID_Aseguradora?>'><?php echo $siniestroAseguradora->Nombre?></option>
-            <?php endforeach ?>
-        </select>
-
-    <button type='submit'>Guadar</button>
-</form>
-<div class = btn-back>
-<button class='back'><a href="siniestros">Atrás</a></button>
 </div>
 
 <?php require_once './templates/layout/footer.phtml' ?>
