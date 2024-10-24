@@ -217,12 +217,13 @@ form{
 .back, #back, .back-aseguradora, .agregarBtn {
     width: 20%;
     font-size: 1.5rem;
-    margin: 1rem;
+    margin: 0.5rem;
 }
 .abm-btn, .back, .agregarBtn{
     border-radius: 6px;
     background-color: #6d5d70;
     color: white;
+    padding: 0.5rem;
 }
 .error{
     background-color: #394C60;
